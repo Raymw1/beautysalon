@@ -63,6 +63,10 @@ body {
     background-color: var(--body-color);
 }
 
+#header.scroll {
+    box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.1);
+}
+
 .logo {
     font: 700 2.1rem 'Poppins', sans-serif;
     color: var(--title-color);
@@ -80,6 +84,18 @@ main {
     padding: 8rem 0;
 }
 
+.section .title {
+    margin-bottom: 1.6rem;
+}
+
+.section header {
+    margin-bottom: 6.4rem;
+}
+
+.section header strong {
+    color: var(--base-color);
+}
+
 .container {
     margin: 0 2.4rem;
 }
@@ -92,7 +108,7 @@ main {
 .button {
     padding: 1.8rem 3.2rem;
     background-color: var(--base-color);
-    border-radius: .4rem;
+    border-radius: .8rem;
     color: var(--text-color-light);
     display: inline-block;
     font: 500 1.6rem "DM Sans", sans-serif;
@@ -104,8 +120,15 @@ main {
 }
 
 .divider-1 {
-    background: linear-gradient(270deg, hsla(var(--hue), 36%, 57%, 1) 0%,
-    hsla(var(--hue), 65%, 88%, 0.34) 100%);
+    background: linear-gradient(270deg, hsla(var(--hue), 36%, 57%, 1),
+    hsla(var(--hue), 65%, 88%, 0.34));
+    height: 0.1rem;
+}
+
+.divider-2 {
+    background: linear-gradient(270deg, hsla(var(--hue), 65%, 88%, 0.34), 
+    hsla(var(--hue), 36%, 57%, 1)
+    );
     height: 0.1rem;
 }
 
@@ -126,6 +149,12 @@ nav {
 nav .menu {
     opacity: 0;
     visibility: hidden;
+    top: -20rem;
+    transition: 200ms;
+}
+
+nav .menu ul {
+    display: none;
 }
 
 nav ul li a {
@@ -150,11 +179,9 @@ nav ul li a::after {
 
 nav ul li a:hover::after {
     width: 100%;
-
 }
 
 nav.show .menu {
-    transition: 400ms;
     opacity: 1;
     visibility: visible;
     background-color: var(--body-color);
@@ -169,6 +196,7 @@ nav.show .menu {
 
 nav.show .menu ul {
     gap: 4rem;
+    display: grid;
 }
 
 nav.show .menu ul li {
@@ -183,17 +211,19 @@ nav.show .menu ul li {
     cursor: pointer;
 }
 
-nav .icon-close,  nav.show .icon-menu {
+nav .icon-close {
     opacity: 0;
     visibility: hidden;
     position: absolute;
-    top: 2rem;
+    top: -1.5rem;
     right: 2rem;
 }
 
 nav.show .icon-close {
     opacity: 1;
     visibility: visible;
+    top: 2rem;
+    transition: 400ms;
 }
 
 
@@ -227,7 +257,7 @@ nav.show .icon-close {
 }
 
 #home .image img, #home .image::before {
-    border-radius: 0.4rem;
+    border-radius: 0.8rem;
 }
 
 #home .text {
@@ -245,5 +275,64 @@ nav.show .icon-close {
 }
 
 /* --------------------------    ABOUT    -------------------------- */
+#about {
+    overflow: hidden;
+    background-color: #fff;
+}
 
+#about .container {
+    margin: 0;
+}
+
+#about .image {
+    position: relative;
+    margin-top: 2.1rem;
+}
+
+#about .image img {
+    position: relative;
+}
+
+#about .image::before {
+    border-radius: 0.8rem;
+    content: '';
+    background-color: var(--base-color-second);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: -8%;
+    right: 33%;
+    z-index: 0;
+}
+
+#about .text {
+    margin: 0 2.4rem;
+}
+
+
+/* --------------------------    SERVICES    -------------------------- */
+.cards.grid {
+    gap: 2.4rem;
+}
+
+.cards .card {
+    text-align: center;
+    padding: 5.8rem 3.2rem;
+    border-radius: .8rem .8rem 0 0;
+    border-bottom: .4rem solid var(--base-color);
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
+    background-color: #fff;
+}
+
+.cards .card i {
+    display: block;
+    margin-bottom: 2.4rem;
+    font-size: 8rem;
+    color: var(--base-color);
+}
+
+.cards .card .title {
+    font-size: 2.4rem;
+    margin-bottom: 1.2rem;
+}
 
