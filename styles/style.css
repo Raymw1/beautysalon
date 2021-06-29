@@ -150,6 +150,7 @@ nav ul li a:hover::after {
 }
 
 nav.show .menu {
+    transition: 400ms;
     opacity: 1;
     visibility: visible;
     background-color: var(--body-color);
@@ -238,5 +239,7 @@ nav.show .icon-close {
     margin-bottom: 3.2rem;
     max-width: 100%;
 }
+
+/* --------------------------    ABOUT    -------------------------- */
 
 
