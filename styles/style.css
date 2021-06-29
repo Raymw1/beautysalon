@@ -41,7 +41,7 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-h1 {
+.title {
     font: 700 3rem 'Poppins', sans-serif;
     color: var(--title-color);
     -webkit-font-smoothing: auto;
@@ -68,13 +68,8 @@ h1 {
     color: var(--base-color);
 } 
 
-nav {
-    height: var(--header-height);
-    align-items: center;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width:  100%;
+main {
+    margin-top: calc(var(--header-height) + 3.2rem);
 }
 
 .section {
@@ -110,9 +105,92 @@ nav {
     height: 0.1rem;
 }
 
-main {
-    margin-top: var(--header-height);
+ul {
+    list-style: none;
 }
+
+/* --------------------------    NAV BAR    -------------------------- */
+nav {
+    height: var(--header-height);
+    align-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width:  100%;
+}
+
+nav .menu {
+    opacity: 0;
+    visibility: hidden;
+}
+
+nav ul li a {
+    transition: color 400ms;
+    position: relative;
+}
+
+nav ul li a:hover {
+    color: var(--base-color);
+}
+
+nav ul li a::after {
+    content: '';
+    width: 0;
+    height: 0.2rem;
+    background-color: var(--base-color);
+    position: absolute;
+    left: 0;
+    bottom: -2.4rem;
+    transition: width 400ms;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+
+}
+
+nav.show .menu {
+    opacity: 1;
+    visibility: visible;
+    background-color: var(--body-color);
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: grid;  /* NAV MENU IN CENTER */
+    place-content: center;
+}
+
+nav.show .menu ul {
+    gap: 4rem;
+}
+
+nav.show .menu ul li {
+    text-align: center;
+}
+
+
+/* --------------------------    TOGGLE MENU    -------------------------- */
+.toggle {
+    color: var(--base-color);
+    font-size: 2.4rem;
+    cursor: pointer;
+}
+
+nav .icon-close,  nav.show .icon-menu {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+}
+
+nav.show .icon-close {
+    opacity: 1;
+    visibility: visible;
+}
+
 
 /* --------------------------    HOME    -------------------------- */
 #home {
@@ -152,7 +230,7 @@ main {
     text-align: center;
 }
 
-#home .text h1 {
+#home .text h1 .title {
     margin-bottom: 1.6rem;
 }
 
