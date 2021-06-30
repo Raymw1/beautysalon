@@ -311,6 +311,10 @@ nav.show .icon-close {
 
 
 /* --------------------------    SERVICES    -------------------------- */
+#services header p {
+    color: var(--title-color);
+}
+
 .cards.grid {
     gap: 2.4rem;
 }
@@ -321,7 +325,6 @@ nav.show .icon-close {
     border-radius: .8rem .8rem 0 0;
     border-bottom: .4rem solid var(--base-color);
     box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
-    background-color: #fff;
 }
 
 .cards .card i {
@@ -334,5 +337,110 @@ nav.show .icon-close {
 .cards .card .title {
     font-size: 2.4rem;
     margin-bottom: 1.2rem;
+}
+
+
+/* --------------------------    TESTIMONIALS    -------------------------- */
+#testimonials {
+    background: #fff;
+}
+
+#testimonials .container {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+#testimonials header {
+    margin: auto 1.5rem 0;
+}
+
+#testimonials blockquote {
+    padding: 3.2rem;
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
+    border-radius: .8rem;
+}
+
+#testimonials blockquote p {
+    text-indent: 3rem;
+    position: relative;
+    margin-bottom: 2.4rem;
+    color: var(--title-color);
+}
+
+#testimonials blockquote p span {
+    font: 700 4rem serif;
+    color: var(--base-color);
+    position: absolute;
+    top: -.6rem;
+    left: -3rem;
+}
+
+#testimonials blockquote cite {
+    display: flex;
+    align-items: center;
+    font-style: normal;
+}
+
+#testimonials blockquote cite img {
+    width: 3rem;
+    height: 3rem;
+    object-fit: cover;
+    clip-path: circle();
+    margin-right: .8rem;
+
+}
+
+
+/* --------------------------    CONTACT    -------------------------- */
+#contact .grid {
+    gap: 6.4rem;
+}
+
+#contact .text p {
+    margin-bottom: 3.2rem;
+}
+
+#contact .button {
+    display: inline-flex;
+    align-items: center;
+    width: auto;
+}
+
+#contact .button i, #contact ul li i {
+    font-size: 2.4rem;
+    margin-right: 1rem;
+}
+
+#contact ul.grid {
+    gap: 3.2rem;
+}
+
+#contact ul li {
+    display: flex;
+    align-items: center;
+}
+
+#contact ul li i {
+    color: var(--base-color);
+}
+
+
+
+
+
+
+/* --------------------------    SWIPER    -------------------------- */
+.swiper-slide {
+    height: auto;
+    padding: 6.4rem 1.6rem;
+}
+
+.swiper-pagination-bullet {
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: var(--base-color);
 }
 
