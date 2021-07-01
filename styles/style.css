@@ -76,6 +76,10 @@ body {
     color: var(--base-color);
 } 
 
+.logo-alt span {
+    color: var(--body-color);
+}
+
 main {
     margin-top: calc(var(--header-height) + 3.2rem);
 }
@@ -425,8 +429,60 @@ nav.show .icon-close {
 }
 
 
+/* --------------------------    FOOTER    -------------------------- */
+footer {
+    background-color: var(--base-color);
+}
 
+footer .logo {
+    display: inline-block;
+    margin-bottom: 2.4rem;
+}
 
+footer .brand {
+    color: var(--text-color-light);
+}
+
+footer .brand p + p {
+    margin-top: 1.2rem;
+}
+
+footer .social a {
+    margin-right: 3.2rem;
+    display: inline-block;
+    transition: .4s;
+}
+
+footer .social a:hover {
+    transform: translateY(-.8rem);
+}
+
+footer i {
+    font-size: 2.4rem;
+    color: var(--text-color-light);
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    padding: 0.5rem;
+    clip-path: circle();
+    color: var(--text-color-light);
+    background-color: var(--base-color);
+    line-height: 0;
+    font-size: 2.4rem;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: 400ms;
+}
+
+.back-to-top.show {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
 
 
 /* --------------------------    SWIPER    -------------------------- */
@@ -442,5 +498,11 @@ nav.show .icon-close {
 
 .swiper-pagination-bullet-active {
     background-color: var(--base-color);
+}
+
+
+/* --------------------------    RESPONSIVE    -------------------------- */
+@media(min-width: 992px) {
+    
 }
 

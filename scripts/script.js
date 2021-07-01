@@ -15,15 +15,25 @@ links.forEach(link => link.addEventListener("click", menu.close));
 
 
 /* --------------------------    ADD SHADOW IN HEADER    -------------------------- */
-const header = document.querySelector("#header");
-const navHeight = header.offsetHeight;  // Get height of an element
-window.addEventListener('scroll', () => {
+function changeHeaderWhenScroll() {
+    const header = document.querySelector("#header");
+    const navHeight = header.offsetHeight;  // Get height of an element
     if (window.scrollY >= navHeight) {
-        header.classList.add("scroll")
+        header.classList.add("scroll");
     }   else {
         header.classList.remove("scroll");
     }
-})
+}
+
+/* --------------------------    DISPLAY BACK TO TOP BUTTON    -------------------------- */
+function showBackToTopBtn () {
+    const backToTopBtn = document.querySelector(".back-to-top");
+    if (window.scrollY >= 560) {
+        backToTopBtn.classList.add("show");
+    }   else {
+        backToTopBtn.classList.remove("show");
+    }
+}
 
 
 /* --------------------------    TESTIMONIALS SLIDER    -------------------------- */
@@ -49,5 +59,12 @@ scrollReveal.reveal(`#home .image, #home .text,
     #about .image, #about .text,
     #services header, #services .card,
     #testimonials header, #testimonials .testimonials,
-    #contact .text, #contact .links`, {interval: 100})
+    #contact .text, #contact .links,
+    footer .logo, footer .brand, footer .social`, {interval: 100});
 
+
+/* --------------------------    SCROLL LISTENER    -------------------------- */
+window.addEventListener("scroll", () => {
+    changeHeaderWhenScroll();
+    showBackToTopBtn();
+})
