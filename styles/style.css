@@ -510,6 +510,20 @@ footer i {
 
 
 /* --------------------------    RESPONSIVE    -------------------------- */
+@media (min-width: 1200px) {
+    #about .image {
+        width: initial;
+    }
+    #about .image img {
+        width: initial;
+        left: -15rem;
+    }
+
+    #about .text {
+        margin-left: -8.6rem;
+    }
+}
+
 @media(min-width: 992px) {
     :root {
         --title-font-size: 3.6rem;
