@@ -11,7 +11,11 @@ const menu = {
 }
 document.querySelector("#header nav .icon-menu").addEventListener("click", menu.open)
 document.querySelector("#header nav .icon-close").addEventListener("click", menu.close)
-links.forEach(link => link.addEventListener("click", menu.close));
+links.forEach(link => link.addEventListener("click", function (event) {
+    event.preventDefault();
+    menu.close();
+    scrollSmooth(link);
+}));
 
 
 /* --------------------------    ADD SHADOW IN HEADER    -------------------------- */
@@ -68,3 +72,9 @@ window.addEventListener("scroll", () => {
     changeHeaderWhenScroll();
     showBackToTopBtn();
 })
+
+/* --------------------------    SCROLL SMOOTH    -------------------------- */
+function scrollSmooth(link) {
+    const sectionId = link.getAttribute('href');
+    document.querySelector(sectionId).scrollIntoView({behavior: "smooth"})
+}
