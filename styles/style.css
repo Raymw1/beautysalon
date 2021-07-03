@@ -510,21 +510,7 @@ footer i {
 
 
 /* --------------------------    RESPONSIVE    -------------------------- */
-@media (min-width: 1200px) {
-    #about .image {
-        width: initial;
-    }
-    #about .image img {
-        width: initial;
-        left: -15rem;
-    }
-
-    #about .text {
-        margin-left: -8.6rem;
-    }
-}
-
-@media(min-width: 992px) {
+@media (min-width: 760px) {
     :root {
         --title-font-size: 3.6rem;
         --paragraph-font-size: 1.8rem;
@@ -590,7 +576,6 @@ footer i {
         -webkit-font-smoothing: auto;
     }
 
-
     /* --------------------------    HOME    -------------------------- */
     #home .image {
         order: 1;
@@ -600,6 +585,7 @@ footer i {
         grid-auto-flow: column;
         justify-content: space-between;
         margin: 0 auto;
+        align-items: center;
     }
 
     #home .text {
@@ -608,6 +594,13 @@ footer i {
         text-align: left;
     }
 
+    #home .image {
+        left: 5rem;
+    }
+
+    #home .image::before {
+        left: 0;
+    }
 
     /* --------------------------    ABOUT    -------------------------- */
     #about .container {
@@ -615,6 +608,9 @@ footer i {
         grid-auto-flow: column;
     }
 
+    #about .image::before {
+        height: 25rem;
+    }
 
     /* --------------------------    TESTIMONIALS     -------------------------- */
     #testimonials .container {
@@ -630,7 +626,14 @@ footer i {
         padding-left: 4.8rem;
         padding-right: 4.8rem;
     }
+}
 
+
+@media(min-width: 992px) {
+    /* --------------------------    HOME    -------------------------- */
+    #home .container {
+        align-items: initial;
+    }
 
     /* --------------------------    CONTACT     -------------------------- */
     #contact .container {
@@ -658,5 +661,20 @@ footer i {
 
     footer .logo {
         font-size: 3.6rem;
+    }
+}
+
+
+@media (min-width: 1200px) {
+    #about .image {
+        width: initial;
+    }
+    #about .image img {
+        width: initial;
+        left: -15rem;
+    }
+
+    #about .text {
+        margin-left: -8.6rem;
     }
 }
